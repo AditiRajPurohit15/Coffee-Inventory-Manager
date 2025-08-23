@@ -46,51 +46,46 @@ const AddCoffeeForm = ({ coffeeData, setCoffeeData, coffee, onSubmit, onCancel }
   };
 
   return (
-    <form 
-      onSubmit={handleSubmit} 
-      className="bg-[#091f36] p-6 rounded-2xl shadow-md max-w-md space-y-4"
+    <form onSubmit={handleSubmit} className="bg-[#ffdb58] p-6 rounded-2xl shadow-md max-w-md mx-auto space-y-4">
+  <input 
+    type="text"
+    placeholder="Coffee Name"
+    value={newCoffeeName}
+    onChange={(e)=> setnewCoffeeName(e.target.value)}
+    className="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-300 text-[#14213d] placeholder-[#14213d] outline-none transition"
+  />
+
+  <input 
+    type="number"
+    placeholder="Stock"
+    value={newCoffeeStock}
+    onChange={(e)=> setnewCoffeeStock(e.target.value)}
+    className="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-300 text-[#14213d] placeholder-[#14213d] outline-none transition"
+  />
+
+  <input 
+    type="number"
+    placeholder="Price"
+    value={newCoffeePrice}
+    onChange={(e)=> setnewCoffeePrice(e.target.value)}
+    className="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-300 text-[#14213d] placeholder-[#14213d] outline-none transition"
+  />
+
+  <button type="submit" className="w-full bg-[#14213d] hover:bg-[#003153] text-white py-3 rounded-lg shadow-md font-semibold transition">
+    {coffee ? "Update Coffee" : "Add Coffee"}
+  </button>
+
+  {coffee && (
+    <button 
+      type="button" 
+      onClick={onCancel} 
+      className="w-full mt-2 bg-gray-400 hover:bg-gray-500 text-black py-3 rounded-lg transition"
     >
-      <input 
-        type="text"
-        placeholder="Coffee Name"
-        value={newCoffeeName}
-        onChange={(e)=> setnewCoffeeName(e.target.value)}
-        className="w-full px-4 py-2 rounded-lg bg-[#ffdb58] text-[#14213d] placeholder-[#14213d]"
-      />
+      Cancel
+    </button>
+  )}
+</form>
 
-      <input 
-        type="number"
-        placeholder="Stock"
-        value={newCoffeeStock}
-        onChange={(e)=> setnewCoffeeStock(e.target.value)}
-        className="w-full px-4 py-2 rounded-lg bg-[#ffdb58] text-[#14213d] placeholder-[#14213d]"
-      />
-
-      <input 
-        type="number"
-        placeholder="Price"
-        value={newCoffeePrice}
-        onChange={(e)=> setnewCoffeePrice(e.target.value)}
-        className="w-full px-4 py-2 rounded-lg bg-[#ffdb58] text-[#14213d] placeholder-[#14213d]"
-      />
-
-      <button 
-        type="submit" 
-        className="w-full bg-[#14213d] hover:bg-[#003153] text-white py-2 rounded-lg shadow-md font-semibold transition"
-      >
-        {coffee ? "Update Coffee" : "Add Coffee"}
-      </button>
-
-      {coffee && (
-        <button 
-          type="button" 
-          onClick={onCancel} 
-          className="w-full mt-2 bg-gray-500 hover:bg-gray-600 text-white py-2 rounded-lg"
-        >
-          Cancel
-        </button>
-      )}
-    </form>
   );
 };
 
