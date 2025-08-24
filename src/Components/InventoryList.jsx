@@ -21,7 +21,7 @@ const InventoryList = ({ coffeeData, setselectedCoffee, handleDelete, managerMod
     value={searchTerm}
     onChange={(e) => setSearchTerm(e.target.value)}
     placeholder="Search coffee..."
-    className="w-full max-w-md p-3 rounded-lg border-2 border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-300 text-black placeholder-gray-500 transition outline-none"
+    className="w-full max-w-md p-3 rounded-lg border-2 border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-300 text-white placeholder-gray-500 transition outline-none"
   />
 </div>
 
